@@ -1,0 +1,11 @@
+//The trick here is to not create severals cases for each cardinal direction, but to concatenate cases
+
+var [LX,LY,TX,TY] = readline().split(' ');
+while (true) {
+    var resp = ""
+    resp += (LY-TY)<0?"N":(LY-TY)>0?"S":"";
+    resp += (LX-TX)<0?"W":(LX-TX)>0?"E":"";
+    TX -= /W|E/.test(resp)?-1:0;
+    TY -= /N|S/.test(resp)?-1:0;
+    console.log(resp);
+}
